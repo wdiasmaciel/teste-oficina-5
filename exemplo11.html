@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo</title>
+    <script>
+        function processar() {
+            var i = 0, vet = [];
+
+            do {
+                var obj = {};
+                obj.nome = prompt("Informe o nome:");
+                obj.curso = prompt("Informe o curso:");
+                vet[i++] = obj;
+            } while (confirm("Deseja informar outro nome?"));
+
+            resp.innerHTML = "Nomes informados: <br />"
+            vet = vet.map((objeto, i) => `${i}) ${objeto.nome}: ${objeto.curso} <br />`);
+            resp.innerHTML = vet.join(sep = "");
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="processar()">Ok</button>
+    <div id="resp"></div>
+</body>
+
+</html>
