@@ -6,21 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exemplo</title>
     <script>
+        function somar() {
+            var num1 = parseInt(entrada1.value);
+            var num2 = parseInt(entrada2.value);
+
+            soma = num1 + num2;
+
+            return soma;
+        }
+
         function processar() {
-            var i = 0, vet = [];
-
-            do {
-                vet[i++] = prompt("Informe o nome:");
-            } while (confirm("Deseja informar outro nome?"));
-
-            resp.innerHTML = "Nomes informados: <br />"
-            for (i = 0; i < vet.length; i++)
-                resp.innerHTML += i + ") " + vet[i] + "<br />";
+            somar();
+            resp.innerHTML = soma;
         }
     </script>
 </head>
 
 <body>
+    <input type="number" id="entrada1">
+    <input type="number" id="entrada2">
     <button onclick="processar()">Ok</button>
     <div id="resp"></div>
 </body>
