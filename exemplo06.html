@@ -14,8 +14,9 @@
             } while (confirm("Deseja informar outro nome?"));
 
             resp.innerHTML = "Nomes informados: <br />"
-            vet = vet.map((nome, i) => i + ") " + nome + "<br />");
-            resp.innerHTML = vet.join(sep = "");
+            //ERRO:
+            vet = vet.forEach((nome, i) => i + ") " + nome + "<br />");
+            resp.innerHTML = vet.join(sep = '');
         }
     </script>
 </head>
