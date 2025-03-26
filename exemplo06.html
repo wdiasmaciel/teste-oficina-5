@@ -14,9 +14,16 @@
             } while (confirm("Deseja informar outro nome?"));
 
             resp.innerHTML = "Nomes informados: <br />"
-            //ERRO:
+            //ERRO: forEach() não retorna valor.
+            vet = vet.forEach(function (nome, i) { return i + ") " + nome + "<br />"});
+            resp.innerHTML = vet.join(sep = '');
+
+            vet = vet.forEach((nome, i) => { return i + ") " + nome + "<br />"});
+            resp.innerHTML = vet.join(sep = '');
+
             vet = vet.forEach((nome, i) => i + ") " + nome + "<br />");
             resp.innerHTML = vet.join(sep = '');
+
         }
     </script>
 </head>
